@@ -1,0 +1,85 @@
+<div class="navbar bg-primary ">
+  <div class="container">
+    <a class="navbar-brand animated pulse infinite" (click)="off()">
+      <label>
+        <strong>
+          Zabud
+        </strong>
+      </label>
+    </a>
+  </div>
+</div>
+
+
+<div class="container mt-4 animated bounceInUp">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-title mt-4">
+          <strong>Agregar un Vehiculo</strong>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <strong>Marca: </strong>
+            <input type="text" class="form-control" [(ngModel)]="vehiculo.marca">
+          </div>
+
+          <div class="form-group">
+            <strong>Placa: </strong>
+            <input type="text" class="form-control" [(ngModel)]="vehiculo.placa" maxlength="7">
+          </div>
+
+
+          <div class="form-group">
+            <strong>Precio: </strong>
+            <input type="number" class="form-control" [(ngModel)]="vehiculo.precio">
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <button type="button" class="form-control btn btn-primary" (click)="saveVehiculo() ">Añadir</button>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <table class="table table-bordered">
+
+        <tr>
+          <td><strong>Marca</strong></td>
+          <td><strong>Placa</strong></td>
+          <td><strong>Precio</strong></td>
+          <td><strong>Eliminar</strong></td>
+          <td><strong>Editar</strong></td>
+        </tr>
+
+        <tr *ngFor="let i of vehiculoArray">
+          <td>{{i.marca}}</td>
+          <td>{{i.placa}}</td>
+          <td>{{i.precio}}</td>
+          <td>
+            <button type="button" class="btn">
+              <i class="fas fa-trash" style="color: red;" (click)="delete(i.id)"></i>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn">
+              <i class="fas fa-wrench" style="color: green" (click)="edit(i)"></i>
+            </button>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+  </div>
+
+</div>

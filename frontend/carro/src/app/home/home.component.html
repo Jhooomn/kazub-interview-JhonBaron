@@ -1,0 +1,50 @@
+<div class="navbar bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <label class="animated pulse infinite">
+        <strong>
+          Zabud
+        </strong>
+      </label>
+    </a>
+  </div>
+</div>
+<br>
+<br>
+<div class="container mt-5 animated bounceInUp">
+
+  <div class="row">
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <table class="table table-bordered">
+
+        <tr>
+          <td colspan="2"><strong>Formulario</strong></td>
+        </tr>
+
+        <tr>
+          <td><strong>Usuario: </strong></td>
+          <td><input type="text" class="form-control" [(ngModel)]="usuario.username"></td>
+        </tr>
+        <tr>
+          <td><strong>Contraseña: </strong></td>
+          <td><input type="password" class="form-control" [(ngModel)]="usuario.password"></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><button type="button" class="form-control btn btn-primary" (click)="login()">Ingresar</button>
+            <br>
+            <br>
+            <small><a class="mt-2" (click)="add()" style="color: #0066ff;">Registrar</a></small>
+            <br>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4"></div>
+
+
+  </div>
+</div>
